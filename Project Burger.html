@@ -1,0 +1,68 @@
+<html>
+<title> Kiwi Burger Project </title>
+
+<script>
+// Project #2 - Javascript
+// Advanced ordering program
+
+// Global Variables
+var totalNumber = 0;		// for total number of burgers ordered
+var burgerPrice = 9.95;		// price of each burger
+var comboPrice = 5; 		// price of combo with can of drink and chips
+var orderTotalPrice = 0; 	// total cost of order
+
+function order() 
+{
+	var burger = new Array()
+	burger[0] = document.form.cheese.value 		//allocate type Cheese burger in Array
+	burger[0] = Number(burger[0])				// converts to number value
+	burger[1] = document.form.egg.value 		//allocate type Egg burger in Array
+	burger[1] = Number(burger[1])
+	burger[2] = document.form.bacon.value 		//allocate type Bacon burger in Array
+	burger[2] = Number(burger[2])
+	burger[3] = document.form.chicken.value 	//allocate type Chicken burger in Array
+	burger[3] = Number(burger[3])
+	
+	totalNumber = burger[0] + burger[1] + burger[2] + burger[3];
+	
+	alert (" You have ordered: " + "\n" +
+			"Cheese Burger: " + burger[0] + "\n" +
+			"Egg Burger: " + burger[1] + "\n" +
+			"Bacon Burger: " + burger[2] + "\n" +
+			"Chicken Burger: " + burger[3] );
+	
+	if (totalNumber >10) {
+	alert("limit of 10 burgers per order, Cancel Order and re-order, current total order: "+totalNumber);
+	} else
+	alert("Total number of burgers ordered: "+ totalNumber); // Total Burgers Ordered
+	
+}
+
+function calculate()       //function for the cost of the order
+{ 
+	alert("test calculate function"); //testing function is working
+	orderTotalPrice = (totalNumber*burgerPrice);    //Order Total =  No. burgers ordered x burger price	
+	alert("Total cost is : $" = orderTotalPrice.toFixed(2) );    //Display order cost as "$" 0.00 	
+}
+
+</script>
+
+
+<body>
+<h1> Welcome to Kiwi Burger Ordering Program </h1>
+<p> Enter burger orders requested by Customer </p>
+<form name="form">    <!-- comments: form to allow text entry to set value of ordering --->
+<input type="text" name= "cheese" > Cheese Burger <br>
+<input type="text" name= "egg" > Egg Burger <br>
+<input type="text" name= "bacon" > Bacon Burger <br>
+<input type="text" name= "chicken" > Chicken Burger <br>
+
+<input type="button" value= "Order Now" onClick="order()">	<!-- button for actionanding order function -->
+<input type="button" value="Cancel Order" onClick="window.location.reload()" >
+
+</form>
+<br> Standard Burgers Cost $9.95</br>
+<br> Combo Deal ~ $5 Extra Charge </br>
+<i> (Note : Maximum 10 Burgers per Customer Order ) </i>
+</body>
+</html>
