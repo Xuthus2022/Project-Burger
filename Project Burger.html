@@ -32,21 +32,41 @@ function order()
 			"Chicken Burger: " + burger[3] );
 	
 	if (totalNumber >10) {
-	alert("limit of 10 burgers per order, Cancel Order and re-order, current total order: "+totalNumber);
+		alert("limit of 10 burgers per order, Cancel Order and re-order, current total order: "+totalNumber);
 	} else
-	alert("Total number of burgers ordered: "+ totalNumber); // Total Burgers Ordered
+		alert("Total number of burgers ordered: "+totalNumber); // Total Burgers Ordered
 	
 }
 
-function calculate()       //function for the cost of the order
-{ 
-	alert("test calculate function"); //testing function is working
+function calculate() {    //function for the cost of the order 
+ 
 	orderTotalPrice = (totalNumber*burgerPrice);    //Order Total =  No. burgers ordered x burger price	
-	alert("Total cost is : $" = orderTotalPrice.toFixed(2) );    //Display order cost as "$" 0.00 	
+
+	var comboMeals = prompt("Does the Customer want Combo Meals +Drink+Fries? Enter number wanted: ")  //Combo meals wanted	
+
+	if(comboMeals > totalNumber) {
+		alert("Sorry, you can only have as many Combo Meals as you have Burgers. Currently: " + comboMeals + " Combo Meals ordered.")
+	} else
+		alert("Thanks for ordering: " + comboMeals + " Combo Meals")
+	orderTotalPrice = (orderTotalPrice + (comboMeals*comboPrice))  //add extra $5 for every Combo Meal ordered
+
+	alert("Total cost is : $" + orderTotalPrice.toFixed(2) );    //Display order cost as "$" 0.00  	
+
+	alert("Customer has ordered " + totalNumber + " burgers, including: " + comboMeals + " Combo Meals")  //Final Confirmation for order details...
+
+
+}
+
+function customer_Details() {
+
+	var koolKiwis = prompt("Would you like to join our loyalty card(Kool Kiwis")
+	if()
+	alert("Would you like to join our loyalty card?")
+	alert()
 }
 
 </script>
-
+			
 
 <body>
 <h1> Welcome to Kiwi Burger Ordering Program </h1>
@@ -57,7 +77,7 @@ function calculate()       //function for the cost of the order
 <input type="text" name= "bacon" > Bacon Burger <br>
 <input type="text" name= "chicken" > Chicken Burger <br>
 
-<input type="button" value= "Order Now" onClick="order()">	<!-- button for actionanding order function -->
+<input type="button" value= "Order Now" onClick="order(), calculate(), customer_Details()">	<!-- button for action and ordering function then Calculating Money -->
 <input type="button" value="Cancel Order" onClick="window.location.reload()" >
 
 </form>
