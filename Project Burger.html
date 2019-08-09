@@ -42,7 +42,7 @@ function calculate() {    //function for the cost of the order
  
 	orderTotalPrice = (totalNumber*burgerPrice);    //Order Total =  No. burgers ordered x burger price	
 
-	var comboMeals = prompt("Does the Customer want Combo Meals +Drink+Fries? Enter number wanted: ")  //Combo meals wanted	
+	var comboMeals = prompt("Does the Customer want Combo Meals + Drink + Fries? Enter number wanted: ")  //Combo meals wanted	
 
 	if(comboMeals > totalNumber) {
 		alert("Sorry, you can only have as many Combo Meals as you have Burgers. Currently: " + comboMeals + " Combo Meals ordered.")
@@ -59,9 +59,18 @@ function calculate() {    //function for the cost of the order
 
 function customer_Details() {
 
-	var koolKiwis = prompt("Would you like to join our loyalty card(Kool Kiwis")
-	if()
-	alert("Would you like to join our loyalty card?")
+	var koolKiwis = prompt("Would you like to join our loyalty card Kool Kiwis?")
+	var customerDetails = new [
+		name =  "",
+		emailAddres = "",
+		telephone = ""
+	]
+	if(koolKiwis = "yes", "Yes") {
+		prompt(customerDetails)
+	} else {
+		alert("Thanks for ordering")
+	}
+	
 	alert()
 }
 
